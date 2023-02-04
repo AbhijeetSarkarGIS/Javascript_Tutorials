@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+    <title>Javascript Tutorials</title>
+</head>   
+<body>
+
+<h2>Java script to compute the Addition of 2 numbers</h2>
+<script>
+    var num1 = 15;
+    var num2 = 10;
+    var sum = num1+num2;
+    document.write("Sum = " + sum);
+</script>
+
+<h2>Java script to compute the G.C.D. of 2 numbers using function</h2>
+
+<script>
+    var num1 = 25;
+    var num2 = 95;
+    var gcd = 1;
+    var i;
+    for(i=2; i<=num1 && i<=num2; i++)
+    {
+    // Checks if i is factor of both integers
+    if(num1 % i == 0 && num2 % i == 0)
+    gcd = i;
+    }
+    document.write("GCD of "+num1+" and "+num2+" is "+gcd);
+</script>
+
+
+<h2>Java script to check whether a number is Prime or not</h2>
+
+<script>
+    function p() {
+    var n, i, flag = true;
+    n = document.myform.n.value;
+    n = parseInt(n)
+    //The parseInt function converts its first argument to a string, parses that string, then returns an integer or NaN
+    for(i = 2; i <= n - 1; i++)
+    if (n % i == 0) {
+    flag = false;
+    break;
+    }
+    if (flag == true)
+    alert(n + " is prime");
+    else
+    alert(n + " is not prime");
+    }
+    </script>
+    </head>
+    <body>
+    <center>
+    <h1>Check whether a number is Prime or not</h1>
+    <hr color="Blue">
+    <form name="myform">
+    Enter the number:
+    <input type="text" name=n value="">
+    <br><br>
+    <input type="button" value="Check" onClick="p()">
+    <br>
+    </form>
+    </center>
+
+    <h2>Java script to check whether the given integer is Palindrome or not</h2>
+    <h4>A palindrome number is a number that remains the same when digits are reversed. </h4>
+    <script>
+        function Palindrome()
+        {
+        var rem, temp, final = 0;
+        var number = Number(document.getElementById("N").value);
+        temp = number;
+        while(number>0)
+        {
+        rem = number%10;
+        number = parseInt(number/10);
+        final = final*10+rem;
+        }
+        if(final==temp)
+        {
+        window.alert("The inputed number is Palindrome");
+        }
+        else
+        {
+        window.alert("The inputted number is not palindrome");
+        }
+        
+        }
+        </script>
+        </head>
+        <body>
+        <br>
+        <h1>Whether a number is Palindrome or not</h1>
+        Enter The Number :<input type="text" name="n" id = "N"/>
+        <hr color="blue">
+        <br>
+        <center><button onClick="Palindrome()">CHECK</button>
+
+ <h2>Java script that calculates the squares and cubes of the numbers from 0 to 10 and outputs</h2>  
+ <script>
+    document.write( "<table> <tr> <th>Number</th> <th>Square</th> <th>Cube</th> </tr>" )
+    for(var n=0; n<=10; n++)
+    {
+    document.write( "<tr><td>" + n + "</td><td>" + n*n + "</td><td>" + n*n*n + "</td></tr>" )
+    }
+    document.write( "</table>" )
+    </script>
+    
+    <h2>Javascript to design simple calculator to perform the following operation: sum,product,difference,quotient</h2>
+
+    <form>
+        <input type="text" id="operand1" />
+        <select id="operation">
+          <option value="sum">+</option>
+          <option value="product">x</option>
+          <option value="difference">-</option>
+          <option value="quotient">/</option>
+        </select>
+        <input type="text" id="operand2" />
+        <button type="button" id="calculate">Calculate</button>
+      </form>
+      <br />
+      <p id="result">Result:</p>
+    </body>
+    <script>
+      const calculate = document.getElementById("calculate");
+      calculate.addEventListener("click", function () {
+        const operand1 = Number(document.getElementById("operand1").value);
+        const operand2 = Number(document.getElementById("operand2").value);
+        const operation = document.getElementById("operation").value;
+  
+        let result;
+        switch (operation) {
+          case "sum":
+            result = operand1 + operand2;
+            break;
+          case "product":
+            result = operand1 * operand2;
+            break;
+          case "difference":
+            result = operand1 - operand2;
+            break;
+          case "quotient":
+            result = operand1 / operand2;
+            break;
+          default:
+            result = "Invalid operation";
+        }
+  
+        document.getElementById("result").innerHTML = `Result: ${result}`;
+      });
+    </script>
+</body>
+</html>
